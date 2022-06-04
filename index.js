@@ -12,8 +12,9 @@ const createDate = (dates, index) => {
     if (index >= 0) {
     return new Date(dates[index]).getTime()/1000
     } else {
-      return dates.sort()
-      .join("-")
+      return dates.map(x => new Date(x).getTime()/1000)
+      .sort()
+      .join("-");
     }
 };
 
