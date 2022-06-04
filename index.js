@@ -10,11 +10,13 @@ const dates = [
 // TODO: Buatlah fungsi createDate
 const createDate = (dates, index) => {
     if (index >= 0) {
-    return new Date(dates[index]).getTime()/1000
+    return (new Date(dates[index]).getTime()/1000)
+    .toString()
     } else {
       return dates.map(x => new Date(x).getTime()/1000)
       .sort()
-      .join("-");
+      .join("-")
+      .toString()
     }
 };
 
@@ -27,6 +29,7 @@ const createDate = (dates, index) => {
 
   // '1614841200' (dalam string)
   console.log(createDate?.(dates, 2));
+
 })();
 
 module.exports = {
